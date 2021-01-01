@@ -195,14 +195,4 @@ probability <- predict(decisionTree_model, creditcard_data, type = 'prob')
 rpart.plot(decisionTree_model)
 confusionMatrix(predicted_val,as.factor(creditcard_data$Class))
 
-#------------------------------------------
-#KNN model
-knn1 <- knn(train = sampled_credit, test = test_data, cl = train_data$Class, k = 5)
-confusionMatrix(knn1, as.factor(test_data$Class), positive = "1")
-
-knn1 <- knn(train = credit_smote, test = test_data, cl = train_data$Class, k = 5)
-confusionMatrix(knn1, as.factor(test_data$Class), positive = "1")
-
-knn1 <- knn(train = train_data, test = test_data, cl = train_data$Class, k = 5)
-confusionMatrix(knn1, as.factor(test_data$Class), positive = "1")
 
